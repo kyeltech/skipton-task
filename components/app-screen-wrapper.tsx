@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 type Props = PropsWithChildren<{
-  headerBackgroundColor: { dark: string; light: string };
+  headerBackgroundColor?: { dark: string; light: string };
 }>;
 
 export default function AppScreen({
