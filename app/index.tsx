@@ -16,7 +16,8 @@ const HomeScreen: React.FC = () => {
     return (
       <AppView style={AppStyle.listCard} >
         <AppView style={AppStyle.cardIndexItem}>
-          <Image source={{ uri: item.thumbnail }} width={29} height={29} style={AppStyle.imageRadius} />
+          <Image accessibilityLabel="Blog thumbnail"
+            accessible source={{ uri: item.thumbnail }} width={29} height={29} style={AppStyle.imageRadius} />
           <AppView style={AppStyle.cardTextFluid}>
             <AppText >{item.slug}</AppText>
             <AppView style={AppStyle.flexRow}>

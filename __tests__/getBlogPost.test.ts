@@ -1,6 +1,6 @@
 import API_ENDPOINTS from "@/app/api/api.config";
 import { axiosInstance } from "@/app/api/posts";
-import { getBlogPosts } from "@/app/api/service/request";
+import { getBlogPosts } from "@/app/api/service/blog.service";
 import { BlogPost } from "@/app/api/type";
 import MockAdapter from "axios-mock-adapter";
 

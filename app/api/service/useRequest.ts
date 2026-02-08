@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getBlogPosts } from "./request";
+import { getBlogPosts } from "./blog.service";
 
 export const useGetBlogPost = () => {
   return useQuery({
