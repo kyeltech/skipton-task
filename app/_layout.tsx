@@ -1,9 +1,10 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
-import Home from './(tabs)/index';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Stack } from 'expo-router';
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -11,13 +12,16 @@ export const unstable_settings = {
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const queryClient = new QueryClient()
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      {/* Remove later and use just index */}
-    <Home/>
-      {/* <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} /> */}
-      <StatusBar style="auto" />
+      <QueryClientProvider client={queryClient}>
+        <Stack screenOptions={{
+          headerShown: false,
+        }} />
+        <StatusBar style="auto" />
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }
